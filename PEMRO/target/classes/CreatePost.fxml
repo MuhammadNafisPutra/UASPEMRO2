@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="/com/example/pemro/view/style.css"
+            fx:controller="com.example.pemro.Controller.LoginController">
+    <children>
+        <Label layoutX="185.0" layoutY="30.0" text="BUAT POSTINGAN BARU" textFill="#4a90e2">
+            <font><Font name="System Bold" size="20.0" /></font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="80.0" text="Judul Keahlian:" />
+        <TextField fx:id="titleField" layoutX="50.0" layoutY="100.0" prefWidth="500.0" promptText="Contoh: Jasa Desain Logo" />
+
+        <Label layoutX="50.0" layoutY="140.0" text="Tipe Postingan:" />
+        <RadioButton fx:id="radioOffer" layoutX="160.0" layoutY="140.0" text="Offer (Tawarkan Jasa)" onAction="#handleTypeChange"/>
+        <RadioButton fx:id="radioRequest" layoutX="320.0" layoutY="140.0" text="Request (Cari Jasa)" onAction="#handleTypeChange"/>
+
+        <Label layoutX="50.0" layoutY="180.0" text="Deskripsi Lengkap:" />
+        <TextArea fx:id="descArea" layoutX="50.0" layoutY="200.0" prefHeight="80.0" prefWidth="500.0" promptText="Jelaskan detailnya..." />
+
+        <VBox fx:id="offerBox" layoutX="50.0" layoutY="300.0" spacing="10.0" visible="false">
+            <children>
+                <Label text="Pengalaman (Tahun):" />
+                <TextField fx:id="experienceField" promptText="Contoh: 2" />
+                <Label text="Link Portfolio:" />
+                <TextField fx:id="portfolioField" promptText="Link Google Drive / Github" />
+            </children>
+        </VBox>
+
+        <VBox fx:id="requestBox" layoutX="320.0" layoutY="300.0" spacing="10.0" visible="false">
+            <children>
+                <Label text="Deadline:" />
+                <DatePicker fx:id="deadlinePicker" />
+                <Label text="Tingkat Urgensi:" />
+                <ComboBox fx:id="urgencyCombo" prefWidth="150.0" promptText="Pilih Urgensi" />
+            </children>
+        </VBox>
+
+        <Button styleClass="button-success" layoutX="230.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleSave" text="POSTING SEKARANG" />
+        <Button styleClass="button-link" layoutX="275.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleCancel" text="Batal" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="/com/example/pemro/view/style.css"
+            fx:controller="com.example.pemro.Controller.LoginController">
+    <children>
+        <Label layoutX="50" layoutY="30" text="Username:"/>
+        <TextField fx:id="usernameField" layoutX="120" layoutY="25" prefWidth="200"/>
+        <Label layoutX="50" layoutY="70" text="Password:"/>
+        <PasswordField fx:id="passwordField" layoutX="120" layoutY="65" prefWidth="200"/>
+        <Button text="Login" layoutX="120" layoutY="110" onAction="#handleLogin"/>
+    </children>
+</AnchorPane>
