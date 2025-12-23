@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15.0" stylesheets="@style.css"
+      fx:controller="com.example.pemro.Controller.RegisterController"
+      prefWidth="450.0" prefHeight="400.0" xmlns:fx="http://javafx.com/fxml/1">
+
+    <padding>
+        <Insets top="30" right="50" bottom="30" left="50"/>
+    </padding>
+
+    <Label text="DAFTAR AKUN BARU" styleClass="header-label"
+           style="-fx-font-size: 22px; -fx-text-fill: #2ecc71;"/>
+
+    <VBox spacing="5.0">
+        <Label text="Nama Lengkap:"/>
+        <TextField fx:id="fullNameField" promptText="Nama Lengkap"/>
+    </VBox>
+
+    <VBox spacing="5.0">
+        <Label text="Username:"/>
+        <TextField fx:id="usernameField" promptText="Username"/>
+    </VBox>
+
+    <VBox spacing="5.0">
+        <Label text="Password:"/>
+        <PasswordField fx:id="passwordField" promptText="Password"/>
+    </VBox>
+
+    <Button text="DAFTAR SEKARANG" onAction="#handleRegister"
+            maxWidth="Infinity" styleClass="button-success"/>
+
+    <Button text="Kembali ke Login" onAction="#handleBack" styleClass="button-link"/>
+</VBox>

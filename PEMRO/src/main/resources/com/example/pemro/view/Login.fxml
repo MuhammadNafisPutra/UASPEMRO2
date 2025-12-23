@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15.0" stylesheets="@style.css"
+      fx:controller="com.example.pemro.Controller.LoginController"
+      prefWidth="400.0" prefHeight="350.0" xmlns:fx="http://javafx.com/fxml/1">
+
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40"/>
+    </padding>
+
+    <Label text="LOGIN BARTERSKILL" styleClass="header-label"
+           style="-fx-font-size: 22px; -fx-text-fill: #2c3e50;"/>
+
+    <VBox spacing="5.0">
+        <Label text="Username:"/>
+        <TextField fx:id="usernameField" promptText="Masukkan username"/>
+    </VBox>
+
+    <VBox spacing="5.0">
+        <Label text="Password:"/>
+        <PasswordField fx:id="passwordField" promptText="Masukkan password"/>
+    </VBox>
+
+    <Button text="LOGIN" onAction="#handleLogin" maxWidth="Infinity" styleClass="button"/>
+
+    <Hyperlink text="Belum punya akun? Daftar di sini" onAction="#handleGoToRegister"/>
+</VBox>

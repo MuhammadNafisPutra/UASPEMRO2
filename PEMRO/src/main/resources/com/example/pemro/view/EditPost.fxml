@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15.0" stylesheets="@style.css" prefWidth="550.0"
+      fx:controller="com.example.pemro.Controller.EditPostController"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="EDIT POSTINGAN" styleClass="header-label"
+           style="-fx-text-fill: #e67e22; -fx-alignment: center;" maxWidth="Infinity"/>
+
+    <Label text="Judul Keahlian:"/>
+    <TextField fx:id="titleField"/>
+
+    <HBox spacing="10">
+        <Label text="Tipe (Terkunci):" style="-fx-opacity: 0.7;"/>
+        <RadioButton fx:id="radioOffer" disable="true" text="Offer" />
+        <RadioButton fx:id="radioRequest" disable="true" text="Request" />
+    </HBox>
+
+    <Label text="Deskripsi:"/>
+    <TextArea fx:id="descArea" prefHeight="100.0" wrapText="true"/>
+
+    <StackPane alignment="TOP_LEFT">
+        <VBox fx:id="offerBox" spacing="10.0" visible="false">
+            <Label text="Pengalaman:"/>
+            <TextField fx:id="experienceField"/>
+            <Label text="Portfolio:"/>
+            <TextField fx:id="portfolioField"/>
+        </VBox>
+
+        <VBox fx:id="requestBox" spacing="10.0" visible="false">
+            <Label text="Deadline:"/>
+            <DatePicker fx:id="deadlinePicker" maxWidth="Infinity"/>
+            <Label text="Urgensi:"/>
+            <ComboBox fx:id="urgencyCombo" maxWidth="Infinity"/>
+        </VBox>
+    </StackPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="SIMPAN PERUBAHAN" onAction="#handleUpdate"
+                styleClass="button" style="-fx-background-color: #e67e22;" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+        <Button text="Batal" onAction="#handleCancel" styleClass="button-link"/>
+    </HBox>
+</VBox>
